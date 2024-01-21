@@ -12,4 +12,4 @@ alert ('benarkah kamu ' + nama)
 
 alert ('dan umur kamu ' + usia)
 
-alert ('benar?')
+confirm("BENAR?");
