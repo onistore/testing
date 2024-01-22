@@ -1,15 +1,9 @@
-alert ("TENANG AJA INI HANYA SAYS JAVASCRIPT JADI BUKAN BUAT ANEH ANEH SANTAI AJA")
-
-alert ("INI WEBSITE GAME UNTUK WEB TOKOH ADA DI LINK BERIKUT")
+alert ("TENANG AJA INI HANYA ALERT JAVASCRIPT JADI BUKAN BUAT ANEH ANEH SANTAI AJA")
 
 let nama = prompt ("sebelum nya masukan nama anda")
 
 let usia = prompt ("sekalian usia anda")
 
-alert ("www.onistore.my.id")
-
-alert ('benarkah kamu ' + nama)
-
-alert ('dan umur kamu ' + usia)
+alert ('benarkah kamu ' + nama'dan umur kamu ' + usia)
 
 confirm("BENAR?");
