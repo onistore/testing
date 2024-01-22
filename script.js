@@ -4,6 +4,6 @@ let nama = prompt ("sebelum nya masukan nama anda")
 
 let usia = prompt ("sekalian usia anda")
 
-alert ('benarkah kamu ' + nama ' dan umur kamu ' + usia)
+alert ('benarkah kamu ' + nama + ' dan umur kamu ' + usia)
 
 confirm("BENAR?");
