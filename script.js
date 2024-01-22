@@ -7,3 +7,5 @@ let usia = prompt ("sekalian usia anda")
 alert ('benarkah kamu ' + nama + ' dan umur kamu ' + usia)
 
 confirm("BENAR?");
+
+alert ('Infoin Games Apa Yang Mau Di Buat, Kirim Aja Nanti Ke WA')
