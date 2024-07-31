@@ -11,6 +11,37 @@
       box-sizing: border-box;
       font-family: 'Press Start 2P', cursive;
     }
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #45a049;
+}
+
   </style>
 </head>
 <body>
@@ -114,9 +145,19 @@
     </div>
     <canvas></canvas>
   </div>
+    <div id="controls">
+        <button id="btnW">W</button>
+        <button id="btnA">A</button>
+        <button id="btnS">S</button>
+        <button id="btnD">D</button>
+        <button id="btnSpace">Space</button>
+        <button id="btnArrowUp">↑</button>
+        <button id="btnArrowDown">↓</button>
+        <button id="btnArrowLeft">←</button>
+        <button id="btnArrowRight">→</button>
+    </div>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
     integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
@@ -124,4 +165,5 @@
   <script src="js/utils.js"></script>
   <script src="js/classes.js"></script>
   <script src="index.js"></script>
+  <script src="controls.js"></script>
 </body>
