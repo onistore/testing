@@ -1,4 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAMURAI DEK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,6 +54,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 20px;
+      justify-content: center;
     }
 
     button {
@@ -66,22 +71,37 @@
       background-color: #45a049;
     }
 
+    .health-bar-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
     .health-bar {
+      width: 80%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
       margin-bottom: 10px;
+      position: relative;
     }
 
     .health-bar div {
       height: 30px;
     }
 
+    .health-bar-player, .health-bar-enemy {
+      background-color: red;
+      width: 100%;
+    }
+
     #playerHealth, #enemyHealth {
       background: #818cf8;
       height: 30px;
       width: 100%;
+      position: absolute;
     }
 
     #timer {
@@ -93,10 +113,12 @@
       justify-content: center;
       color: white;
       border: 4px solid white;
+      margin-bottom: 20px;
     }
 
     canvas {
       border: 1px solid black;
+      margin-bottom: 20px;
     }
 
     #displayText {
@@ -119,20 +141,22 @@
   </div>
   
   <div id="center">
-    <div class="health-bar">
-      <div style="background-color: red; width: 100%;"></div>
-      <div id="playerHealth"></div>
-    </div>
+    <!-- Health Bar Container -->
+    <div class="health-bar-container">
+      <div class="health-bar">
+        <div class="health-bar-player"></div>
+        <div id="playerHealth"></div>
+      </div>
 
-    <div id="timer">10</div>
+      <div id="timer">10</div>
 
-    <div class="health-bar">
-      <div style="background-color: red; width: 100%;"></div>
-      <div id="enemyHealth"></div>
+      <div class="health-bar">
+        <div class="health-bar-enemy"></div>
+        <div id="enemyHealth"></div>
+      </div>
     </div>
 
     <canvas></canvas>
-
     <div id="displayText">Tie</div>
   </div>
 
@@ -160,3 +184,4 @@
   <script src="index.js"></script>
   <script src="controls.js"></script>
 </body>
+</html>
