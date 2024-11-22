@@ -219,6 +219,36 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Countdown Script
+const countdown = () => {
+    const eventDate = new Date("December 31, 2024 23:59:59").getTime(); // Ubah sesuai tanggal acara
+    const now = new Date().getTime();
+    const timeLeft = eventDate - now;
+
+    // Hitung waktu
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    // Update elemen HTML
+    document.getElementById("days").textContent = days < 10 ? `0${days}` : days;
+    document.getElementById("hours").textContent = hours < 10 ? `0${hours}` : hours;
+    document.getElementById("minutes").textContent = minutes < 10 ? `0${minutes}` : minutes;
+    document.getElementById("seconds").textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+    // Tampilkan pesan jika waktu habis
+    if (timeLeft < 0) {
+        clearInterval(timer);
+        document.querySelector(".timer").innerHTML = "<h2>Event Started!</h2>";
+    }
+};
+
+// Jalankan countdown setiap detik
+const timer = setInterval(countdown, 1000);
+countdown();
+
+    </script>
 </body>
 </html>
