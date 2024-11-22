@@ -111,50 +111,58 @@
             color: #fff;
         }
 
-        /* Page 2: Our Partners */
-        .page-two {
-            background-image: url('monas.png'); /* Ganti dengan URL gambar gedung */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+        /* Page 2: Partners */
+        /* Page 2: Partners */
+.page-two {
+    background: linear-gradient(135deg, 
+        #1e90ff, 
+        #ffb6c1 30%, 
+        #ff6347 60%, 
+        #ff4500 80%
+    );
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        .page-two h1 {
-            margin: 20px 0;
-        }
+.page-two h1 {
+    color: #ffebcd;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.3);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
 
-        .partner-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .partner-grid a {
-            display: block;
-            text-decoration: none;
-        }
+.partner-grid a {
+    display: block;
+    text-decoration: none;
+}
 
-        .partner-grid img {
-            width: 100%;
-            max-width: 120px;
-            margin: 0 auto;
-            display: block;
-            transition: transform 0.3s ease;
-            border: 2px solid #ccc;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 10px;
-        }
+.partner-grid img {
+    width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
 
-        .partner-grid img:hover {
-            transform: scale(1.1);
-            border-color: #000;
-        }
+.partner-grid img:hover {
+    transform: scale(1.1);
+    border-color: #fcd34d;
+}
 
     </style>
 </head>
