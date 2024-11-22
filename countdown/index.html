@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer and Our Partners</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            page-break-after: always;
+        }
+        /* Page 1: Countdown Timer */
+        .page-one {
+            background: linear-gradient(135deg, 
+                #1e90ff, 
+                #ffb6c1 30%, 
+                #ff6347 60%, 
+                #ff4500 80%
+            );
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin: 0;
+            text-transform: uppercase;
+            color: #ffebcd;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                         0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .countdown-container h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                         0 0 20px rgba(255, 255, 255, 0.6);
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .timer div {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .timer div span {
+            display: block;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fcd34d;
+        }
+
+        .timer div small {
+            margin-top: 10px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        /* Page 2: Our Partners */
+        .page-two {
+            background-image: url('monas.png'); /* Ganti dengan URL gambar gedung */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .page-two h1 {
+            margin: 20px 0;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .partner-grid a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .partner-grid img {
+            width: 100%;
+            max-width: 120px;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+            border: 2px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .partner-grid img:hover {
+            transform: scale(1.1);
+            border-color: #000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Countdown Timer -->
+    <div class="page page-one">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+
+        <header class="header">
+            <p class="tagline">Mitra Digitalisasi Bangsa - Bagian dari Ekosistem Nasional</p>
+        </header>
+
+        <!-- Countdown Section -->
+        <div class="countdown-container">
+            <h1>Grand Opening Resmi SakuraCloudID Mendukung Indonesia Digital</h1>
+            <div class="timer">
+                <div>
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div>
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div>
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div>
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Our Partners -->
+    <div class="page page-two">
+        <h1>Our Partners</h1>
+        <div class="partner-grid">
+            <a href="https://partner1.com" target="_blank" rel="noopener noreferrer">
+                <img src="logo.png" alt="Partner 1">
+            </a>
+            <a href="https://partner2.com" target="_blank" rel="noopener noreferrer">
+                <img src="logo.png" alt="Partner 2">
+            </a>
+            <a href="https://partner3.com" target="_blank" rel="noopener noreferrer">
+                <img src="logo.png" alt="Partner 3">
+            </a>
+            <a href="https://partner4.com" target="_blank" rel="noopener noreferrer">
+                <img src="logo.png" alt="Partner 4">
+            </a>
+            <a href="https://partner5.com" target="_blank" rel="noopener noreferrer">
+                <img src="logo.png" alt="Partner 5">
+            </a>
+            <a href="https://partner6.com" target="_blank" rel="noopener noreferrer">
+                <img src="logo.png" alt="Partner 6">
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
