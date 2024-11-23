@@ -25,8 +25,8 @@
             padding: 20px;
             page-break-after: always;
         }
-        /* Page 1: Countdown Timer */
-        .page-one, .page-two {
+        
+        .page-one {
             background: linear-gradient(135deg, 
                 #1e90ff, 
                 #ffb6c1 30%, 
@@ -111,7 +111,18 @@
             color: #fff;
         }
 
-        /* Partners Section */
+        .page-two {
+            background: linear-gradient(135deg, 
+                #1e90ff, 
+                #ffb6c1 30%, 
+                #ff6347 60%, 
+                #ff4500 80%
+            );
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
         .page-two h1 {
             color: #ffebcd;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
@@ -151,8 +162,12 @@
             border-color: #fcd34d;
         }
 
-        /* Responsiveness */
         @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                padding: 10px;
+            }
+
             .logo-container {
                 position: relative;
                 top: 0;
@@ -202,11 +217,14 @@
             height: auto;
             display: block;
         }
+
+        body {
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Page 1: Countdown Timer -->
     <div class="page page-one">
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo">
@@ -216,7 +234,6 @@
             <p class="tagline">Mitra Digitalisasi Bangsa - Bagian dari Ekosistem Nasional</p>
         </header>
 
-        <!-- Countdown Section -->
         <div class="countdown-container">
             <h1>Grand Opening Resmi SakuraCloudID Mendukung Indonesia Digital</h1>
             <div class="timer">
@@ -240,7 +257,6 @@
         </div>
     </div>
 
-    <!-- Page 2: Our Partners -->
     <div class="page page-two">
         <h1>Our Partners</h1>
         <div class="partner-grid">
@@ -276,19 +292,18 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("days").textContent = days < 10 ? `0${days}` : days;
-            document.getElementById("hours").textContent = hours < 10 ? `0${hours}` : hours;
-            document.getElementById("minutes").textContent = minutes < 10 ? `0${minutes}` : minutes;
-            document.getElementById("seconds").textContent = seconds < 10 ? `0${seconds}` : seconds;
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
 
             if (timeLeft < 0) {
                 clearInterval(timer);
-                document.querySelector(".timer").innerHTML = "<h2>Event Started!</h2>";
+                document.querySelector(".countdown-container").innerHTML = "Event has started!";
             }
         };
 
         const timer = setInterval(countdown, 1000);
-        countdown();
     </script>
 
 </body>
