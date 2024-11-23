@@ -112,58 +112,117 @@
         }
 
         /* Page 2: Partners */
-        /* Page 2: Partners */
-.page-two {
-    background: linear-gradient(135deg, 
-        #1e90ff, 
-        #ffb6c1 30%, 
-        #ff6347 60%, 
-        #ff4500 80%
-    );
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+        .page-two {
+            background: linear-gradient(135deg, 
+                #1e90ff, 
+                #ffb6c1 30%, 
+                #ff6347 60%, 
+                #ff4500 80%
+            );
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
 
-.page-two h1 {
-    color: #ffebcd;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
-                 0 0 20px rgba(255, 255, 255, 0.3);
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
+        .page-two h1 {
+            color: #ffebcd;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                         0 0 20px rgba(255, 255, 255, 0.3);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
 
-.partner-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.partner-grid a {
-    display: block;
-    text-decoration: none;
-}
+        .partner-grid a {
+            display: block;
+            text-decoration: none;
+        }
 
-.partner-grid img {
-    width: 100%;
-    max-width: 120px;
-    margin: 0 auto;
-    display: block;
-    transition: transform 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-}
+        .partner-grid img {
+            width: 100%;
+            max-width: 120px;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-.partner-grid img:hover {
-    transform: scale(1.1);
-    border-color: #fcd34d;
-}
+        .partner-grid img:hover {
+            transform: scale(1.1);
+            border-color: #fcd34d;
+        }
 
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .logo-container {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            .header {
+                margin-bottom: 10px;
+            }
+
+            .countdown-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .timer {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .timer div {
+                padding: 15px 10px;
+            }
+
+            .timer div span {
+                font-size: 2.5rem;
+            }
+
+            .partner-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .partner-grid img {
+                max-width: 80px;
+                padding: 5px;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
@@ -229,34 +288,29 @@
 
     <script>
         // Countdown Script
-const countdown = () => {
-    const eventDate = new Date("December 31, 2024 23:59:59").getTime(); // Ubah sesuai tanggal acara
-    const now = new Date().getTime();
-    const timeLeft = eventDate - now;
+        const countdown = () => {
+            const eventDate = new Date("December 31, 2024 23:59:59").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
 
-    // Hitung waktu
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    // Update elemen HTML
-    document.getElementById("days").textContent = days < 10 ? `0${days}` : days;
-    document.getElementById("hours").textContent = hours < 10 ? `0${hours}` : hours;
-    document.getElementById("minutes").textContent = minutes < 10 ? `0${minutes}` : minutes;
-    document.getElementById("seconds").textContent = seconds < 10 ? `0${seconds}` : seconds;
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
 
-    // Tampilkan pesan jika waktu habis
-    if (timeLeft < 0) {
-        clearInterval(timer);
-        document.querySelector(".timer").innerHTML = "<h2>Event Started!</h2>";
-    }
-};
+            if (timeLeft < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-container").innerHTML = "Event has started!";
+            }
+        };
 
-// Jalankan countdown setiap detik
-const timer = setInterval(countdown, 1000);
-countdown();
-
+        const timer = setInterval(countdown, 1000);
     </script>
+
 </body>
 </html>
