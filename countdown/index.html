@@ -26,7 +26,7 @@
             page-break-after: always;
         }
         /* Page 1: Countdown Timer */
-        .page-one {
+        .page-one, .page-two {
             background: linear-gradient(135deg, 
                 #1e90ff, 
                 #ffb6c1 30%, 
@@ -111,19 +111,7 @@
             color: #fff;
         }
 
-        /* Page 2: Partners */
-        .page-two {
-            background: linear-gradient(135deg, 
-                #1e90ff, 
-                #ffb6c1 30%, 
-                #ff6347 60%, 
-                #ff4500 80%
-            );
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
+        /* Partners Section */
         .page-two h1 {
             color: #ffebcd;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
@@ -165,11 +153,6 @@
 
         /* Responsiveness */
         @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-                padding: 10px;
-            }
-
             .logo-container {
                 position: relative;
                 top: 0;
@@ -218,10 +201,6 @@
             max-width: 100%;
             height: auto;
             display: block;
-        }
-
-        body {
-            overflow-x: hidden;
         }
     </style>
 </head>
@@ -287,7 +266,6 @@
     </div>
 
     <script>
-        // Countdown Script
         const countdown = () => {
             const eventDate = new Date("December 31, 2024 23:59:59").getTime();
             const now = new Date().getTime();
@@ -298,18 +276,19 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
+            document.getElementById("days").textContent = days < 10 ? `0${days}` : days;
+            document.getElementById("hours").textContent = hours < 10 ? `0${hours}` : hours;
+            document.getElementById("minutes").textContent = minutes < 10 ? `0${minutes}` : minutes;
+            document.getElementById("seconds").textContent = seconds < 10 ? `0${seconds}` : seconds;
 
             if (timeLeft < 0) {
                 clearInterval(timer);
-                document.querySelector(".countdown-container").innerHTML = "Event has started!";
+                document.querySelector(".timer").innerHTML = "<h2>Event Started!</h2>";
             }
         };
 
         const timer = setInterval(countdown, 1000);
+        countdown();
     </script>
 
 </body>
