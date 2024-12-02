@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Online</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 10px 0;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .section a {
+            text-decoration: none;
+        }
+
+        /* Header and Hero Section */
+        .hero {
+            background-image: url('hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .hero-text {
+            text-align: center;
+        }
+        .hero .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Menu Section */
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            padding: 0 10px;
+        }
+        .menu-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            max-width: 100%;
+        }
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .menu-item h3 {
+            font-size: 18px;
+        }
+        .menu-item .btn {
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">RESTO PINGGIRAN</div>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="hero-text">
+            <h1>Selamat Datang di RESTO PINGGIRAN</h1>
+            <p>Rasakan Lezatnya Hidangan Terbaik</p>
+            <a href="#menu" class="btn">Lihat Menu</a>
+        </div>
+    </header>
+    <main>
+        <section id="menu" class="section">
+            <h2>Menu Kami</h2>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="nasi goreng.png" alt="Nasi Goreng">
+                    <h3>Nasi Goreng</h3>
+                    <p>Rp 20.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="mie ayam.png" alt="Mie Ayam">
+                    <h3>Mie Ayam</h3>
+                    <p>Rp 15.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="ayam geprek.png" alt="Ayam Geprek">
+                    <h3>Ayam Geprek</h3>
+                    <p>Rp 25.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="soto ayam.png" alt="Soto Ayam">
+                    <h3>Soto Ayam</h3>
+                    <p>Rp 18.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="bakso.png" alt="Bakso">
+                    <h3>Bakso</h3>
+                    <p>Rp 20.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="pecel.png" alt="Pecel">
+                    <h3>Pecel</h3>
+                    <p>Rp 12.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="rawon.png" alt="Rawon">
+                    <h3>Rawon</h3>
+                    <p>Rp 30.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="gudeg.png" alt="Gudeg">
+                    <h3>Gudeg</h3>
+                    <p>Rp 25.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="tahu isi.png" alt="Tahu Isi">
+                    <h3>Tahu Isi</h3>
+                    <p>Rp 10.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="es teh.png" alt="Es Teh">
+                    <h3>Es Teh</h3>
+                    <p>Rp 5.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="es jeruk.png" alt="Es Teh">
+                    <h3>Es Jeruk</h3>
+                    <p>Rp 5.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="wedang jahe.png" alt="Es Teh">
+                    <h3>Wedang Jahe</h3>
+                    <p>Rp 5.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="ayam goreng.png" alt="Es Teh">
+                    <h3>Ayam Goreng</h3>
+                    <p>Rp 5.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+                <div class="menu-item">
+                    <img src="ikan bakar.png" alt="Es Teh">
+                    <h3>Ikan Bakar</h3>
+                    <p>Rp 5.000</p>
+                    <button class="btn order-btn">Pesan</button>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="section">
+            <h2>Tentang Kami</h2>
+            <p>RESTO PINGGIRAN adalah tempat di mana rasa dan kualitas bertemu. Kami menghadirkan makanan terbaik dengan bahan segar dan cinta untuk Anda.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Kontak Kami</h2>
+            <p>Hubungi kami di <a href="https://api.whatsapp.com/send/?phone=6285624566607">085624566607</a> atau kunjungi restoran kami di Jalan Bla Bla Bla No. 123.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RESTO PINGGIRAN</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const orderButtons = document.querySelectorAll('.order-btn');
+            orderButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert("Pesanan Anda telah ditambahkan ke keranjang!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
